@@ -53,7 +53,7 @@ namespace JobPortal.Controllers
         }
 
         [HttpPut("update/{id}")]
-        [Authorize(Roles = "Applicant, Admin")] // Restrict to Applicant and Admin roles
+        [Authorize(Roles = "Applicant, Admin, Employer")] // Restrict to Applicant and Admin roles
         public async Task<IActionResult> Update(int id, JobApplicationUpdateDto jobApplicationUpdateDto)
         {
             var jobApplication = await _jobApplicationService.UpdateAsync(id, jobApplicationUpdateDto);
